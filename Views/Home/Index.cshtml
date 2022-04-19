@@ -2,7 +2,31 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Final.Models.ViewModels.QuotesViewModel
+
+@*@model List<Quote>*@
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Discover New Quotes</h1>
 </div>
+
+<table class="table table-bordered table-striped">
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Quote</td>
+            <td>Author</td>
+            <td>Details</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var q in Model.Quotes)
+        {
+            <tr>
+                <td>@q.QuoteFull</td>
+                <td>@q.Author</td>
+                <td><a asp-controller="Home" asp-action="Details" asp-route-Quote="@q.QuoteFull">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

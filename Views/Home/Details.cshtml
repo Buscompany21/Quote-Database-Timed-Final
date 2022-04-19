@@ -1,0 +1,31 @@
+﻿@{
+}
+
+@model Final.Models.Quote
+
+<div class="container">
+    <button class="btn btn-outline-secondary nav-link mb-2"><a asp-controller="Home" asp-action="Delete" asp-route-Quote="@Model.QuoteFull">Delete Quote</a></button>
+    <form method="post">
+
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="QuoteFull">Quote:</label>
+        <input asp-for="QuoteFull" /><br />
+
+        <label asp-for="Author">Author:</label>
+        <input asp-for="Author" /><br />
+
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" /><br />
+
+        <label asp-for="CitationVar">Subject:</label>
+        <input asp-for="CitationVar" /><br />
+
+        <label asp-for="Citation">Citation:</label>
+        <input asp-for="Citation" /><br />
+        <br />
+
+
+        <button asp-action="Details" type="submit" class="btn btn-outline-secondary nav-link mb-2">Save</button>
+    </form>
+</div>
