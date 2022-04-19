@@ -95,8 +95,16 @@ namespace Final.Controllers
 
             var blah = _repo.Quotes
                 .ToList();
-            return View("Index", blah);
+            return View("DeleteConfirmation", blah);
+        }
+
+        [HttpGet]
+        public IActionResult DeleteConfirmation()
+        {
+            return View();
         }
 
     }
+
+    
 }
